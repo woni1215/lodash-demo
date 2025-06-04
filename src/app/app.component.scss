@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  ::ng-deep {
+    .p-component {
+      font-family: 'Consolas', sans-serif;
+    }
+  }
+}
+
+.sidebar {
+  max-width: 320px;
+  overflow-x: auto;
+}

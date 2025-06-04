@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 82px);
+  overflow-y: auto;
+
+  ::ng-deep {
+    .p-tree.p-component.p-tree-selectable {
+      height: 100%;
+      border-width: 0px;
+      background: none;
+    }
+  }
+}

@@ -1,0 +1,506 @@
+<div class="m-5">
+  <p-card [header]="selectedMenu ? selectedMenu : undefined">
+    <ng-container [ngSwitch]="selectedMenu">
+
+      <!-- invokeMap -->
+      <ng-container *ngSwitchCase="'_.invokeMap'">
+        <p>對集合中的每個元素執行方法並回傳結果，<span class="font-bold">只會呼叫第一層元素的方法</span></p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="invokeMap | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapOrg2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="invokeMap2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapOrg3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapLo3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapJs3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="invokeMap3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapOrg4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapLo4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="invokeMapJs4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="invokeMap4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- keyBy -->
+      <ng-container *ngSwitchCase="'_.keyBy'">
+        <p>把陣列轉換為物件</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="keyByLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="keyByJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="keyBy | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Array</th>
+              <td>
+                <pre><code [innerHTML]="arrayStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="keyByLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="keyByJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="keyBy2 | prism: 'typescript'"></code></pre>
+                <p>// ASCII 97=>a, 100=>d</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- map -->
+      <ng-container *ngSwitchCase="'_.map'">
+        <p>對集合中的每個元素套用轉換邏輯，並回傳新陣列</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Array</th>
+              <td>
+                <pre><code [innerHTML]="mapOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="mapLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="mapJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="map | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="mapLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="mapJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="map2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>【差異】Lodash 可直接給物件</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="mapOrg3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="mapLo3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="mapJs3 | prism: 'typescript'"></code></pre>
+                <p>// 需先轉換成物件才可處理</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="map3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- orderBy -->
+      <ng-container *ngSwitchCase="'_.orderBy'">
+        <p>指定每個欄位排序，預設全部 asc</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="users2Str | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="orderByLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="orderByJs | prism: 'typescript'"></code></pre>
+                <p>// 依照 user 名字排序，如果名字相同，再依照 age 欄位 由大到小 排序</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="orderBy | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- partition -->
+      <ng-container *ngSwitchCase="'_.partition'">
+        <p>把集合分為符合與未符合兩類</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="partitionLo | prism: 'typescript'"></code></pre>
+                <p>// boolean 用 true or false 分；string & number 用有無值分；number null、undefined、0 被歸為同一類</p>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="partitionJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="partition | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="partitionLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="partitionJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="partition2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="partitionLo3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="partitionJs3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="partition3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="partitionLo4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="partitionJs4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="partition4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- reduce -->
+      <ng-container *ngSwitchCase="'_.reduce'">
+        <p>對集合中的每個元素套用累加邏輯，並回傳最終結果</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="reduceOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="reduceLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="reduceJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="reduce | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>【差異】Lodash 可處理物件</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="reduceOrg2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="reduceLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="reduceJs2 | prism: 'typescript'"></code></pre>
+                <p>// 需先使用 Object.entries(obj) 將物件轉換成 key-value 配對的陣列</p>
+                <p>// [['a', 1], ['b', 2], ['c', 1]]</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="reduce2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </p-card>
+</div>
