@@ -32,6 +32,13 @@ export class CollectionComponent implements OnInit {
   ];
   users2Str = JSON.stringify(this.users2, null, 1);
 
+  users3 = {
+    barney: { 'age': 36, 'active': false },
+    fred: { 'age': 40, 'active': true },
+    pebbles: { 'age': 1, 'active': false }
+  };
+  users3Str = JSON.stringify(this.users3, null, 1);
+
   array = [
     { 'dir': 'left', 'code': 97 },
     { 'dir': 'right', 'code': 100 }
@@ -42,8 +49,7 @@ export class CollectionComponent implements OnInit {
 
   ngOnInit() {
     this.menuServ.selectedMenu$.subscribe(item => this.selectedMenu = item);
-    console.log(Object.entries({ a: 1, b: 2, c: 1 }));
-
+    console.log(this.test());
   }
 
   // #region invokeMap
@@ -160,9 +166,116 @@ Object.entries({ a: 1, b: 2, c: 1 }).reduce((result: { [key: number]: string[] }
   }, {}));
   // #endregion
 
+
+  // #region reduceRight
+  reduceRightOrg = JSON.stringify({ 'a': 1, 'b': 2, 'c': 1 });
+  reduceRightLo = `
+_.reduceRight({ 'a': 1, 'b': 2, 'c': 1 }, (result: { [key: number]: string[] }, value, key) => {
+  (result[value] || (result[value] = [])).push(key)
+  return result;
+}, {})`;
+  reduceRightJs = `
+Object.entries({ a: 1, b: 2, c: 1 }).reduceRight((result: { [key: number]: string[] }, [key, value]) => {
+  (result[value] || (result[value] = [])).push(key)
+  return result;
+}, {});`;
+  reduceRight = JSON.stringify(_.reduceRight({ 'a': 1, 'b': 2, 'c': 1 }, (result: { [key: number]: string[] }, value, key) => {
+    (result[value] || (result[value] = [])).push(key)
+    return result;
+  }, {}));
+  // #endregion
+
+  // #region reject
+  rejectLo = `_.reject(this.users, a => !a.active);`;
+  rejectJs = `this.users.filter(a => a.active);`;
+  reject = JSON.stringify(_.reject(this.users, a => !a.active), null, 1);
+
+  rejectLo2 = `_.reject(this.users, { 'age': 36, 'active': false });`;
+  rejectJs2 = `
+this.users.filter(a => !(a.age === 36 && !a.active));`;
+  reject2 = JSON.stringify(_.reject(this.users, { 'age': 36, 'active': false }), null, 1);
+
+  rejectLo3 = `_.reject(this.users, ['active', false]);`;
+  filterLo = `_.filter(this.users, ['active', false]);`;
+  reject3 = JSON.stringify(_.reject(this.users, ['active', false]), null, 1);
+  filter = JSON.stringify(_.filter(this.users, ['active', false]), null, 1);
+  // #endregion
+
+  // #region sample
+  sampleOrg = JSON.stringify([1, 2, 3, 4]);
+  sampleLo = `_.sample([1, 2, 3, 4]);`;
+  sampleJs = `[1, 2, 3, 4][Math.floor(Math.random() * 4)];`;
+  sample = JSON.stringify(_.sample([1, 2, 3, 4]));
+
+  sampleLo2 = `_.sample(this.users);`;
+  sampleJs2 = `Object.entries(this.users)[Math.floor(Math.random() * Object.keys(this.users3).length)][1];`;
+  sample2 = JSON.stringify(_.sample(this.users3));
+  // #endregion
+
+  // #region sampleSize
+  sampleSizeOrg = JSON.stringify([1, 2, 3, 4]);
+  sampleSizeLo = `_.sampleSize([1, 2, 3, 4], 2);`;
+  sampleSizeJs = `let selected = [];
+let arr = [1, 2, 3, 4];
+for (let i = 0; i < 2; i++) {
+  const index = Math.floor(Math.random() * arr.length);
+  selected.push(arr[index]);
+  arr.splice(index, 1);
+}
+return selected;`;
+  sampleSize = JSON.stringify(_.sampleSize([1, 2, 3, 4], 2));
+  // #endregion
+
+  // #region shuffle
+  shuffleOrg = JSON.stringify([1, 2, 3, 4]);
+  shuffleLo = `_.shuffle([1, 2, 3, 4]);`;
+  shuffleJs = `let arr = [1, 2, 3, 4];
+for (let i = arr.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+}
+return arr;`;
+  shuffle = JSON.stringify(_.shuffle([1, 2, 3, 4]));
+  // #endregion
+
+  // #region size
+  sizeOrg = JSON.stringify([1, 2, 3, 4]);
+  sizeLo = `_.size([1, 2, 3, 4]);`;
+  sizeJs = `[1, 2, 3, 4].length;`;
+  size = JSON.stringify(_.size([1, 2, 3, 4]));
+
+  sizeLo2 = `_.size(this.users);`;
+  sizeJs2 = `Object.keys(this.users3).length;`;
+  size2 = JSON.stringify(_.size(this.users3));
+
+  sizeOrg3 = "pebbles";
+  sizeLo3 = `_.size("pebbles");`;
+  sizeJs3 = `"pebbles".length;`;
+  size3 = JSON.stringify(_.size("pebbles"));
+  // #endregion
+
+  // #region some
+  someLo = `_.some(this.users, ['age',1]]);`;
+  someJs = `this.users.some(a => a.age == 1);`;
+  some = JSON.stringify(_.some(this.users, ['age', 1]));
+
+  someLo2 = "_.some(this.users, 'barney');";
+  some2 = JSON.stringify(_.some(this.users3, 'barney'));
+  // #endregion
+
+  // #region sortBy
+  sortByLo = `_.sortBy(this.users, ['user', 'age']);`;
+  sortByJs = `this.users2.sort((a, b) => a.user.localeCompare(b.user) || a.age - b.age);`;
+  sortBy = JSON.stringify(_.sortBy(this.users2, ['user', 'age']), null, 1);
+  // #endregion
+
   // function
   square(n: number): number {
     return n * n;
+  }
+
+  test() {
+    return this.users2.sort((a, b) => a.user.localeCompare(b.user) || a.age - b.age);
   }
 }
 

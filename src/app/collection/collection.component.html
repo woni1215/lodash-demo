@@ -4,7 +4,7 @@
 
       <!-- invokeMap -->
       <ng-container *ngSwitchCase="'_.invokeMap'">
-        <p>對集合中的每個元素執行方法並回傳結果，<span class="font-bold">只會呼叫第一層元素的方法</span></p>
+        <p>對集合中的每個元素執行方法，只會呼叫第一層元素的方法</p>
         <p-divider></p-divider>
         <table class="code-table">
           <tbody>
@@ -125,7 +125,7 @@
 
       <!-- keyBy -->
       <ng-container *ngSwitchCase="'_.keyBy'">
-        <p>把陣列轉換為物件</p>
+        <p>陣列轉物件</p>
         <p-divider></p-divider>
         <table class="code-table">
           <tbody>
@@ -189,7 +189,7 @@
 
       <!-- map -->
       <ng-container *ngSwitchCase="'_.map'">
-        <p>對集合中的每個元素套用轉換邏輯，並回傳新陣列</p>
+        <p>對集合中的每個元素套用轉換邏輯</p>
         <p-divider></p-divider>
         <table class="code-table">
           <tbody>
@@ -439,7 +439,7 @@
 
       <!-- reduce -->
       <ng-container *ngSwitchCase="'_.reduce'">
-        <p>對集合中的每個元素套用累加邏輯，並回傳最終結果</p>
+        <p>對集合中的每個元素套用累加邏輯</p>
         <p-divider></p-divider>
         <table class="code-table">
           <tbody>
@@ -501,6 +501,424 @@
           </tbody>
         </table>
       </ng-container>
+
+      <!-- reduceRight -->
+      <ng-container *ngSwitchCase="'_.reduceRight'">
+        <p>由右到左，對集合中的每個元素套用累加邏輯</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="reduceRightOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="reduceRightLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="reduceRightJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="reduceRight | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- reject -->
+      <ng-container *ngSwitchCase="'_.reject'">
+        <p>符合條件的拒絕</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="usersStr | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="rejectLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="rejectJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="reject | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="rejectLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="rejectJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="reject2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>_.reject vs _.filter</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <td>
+                <pre><code [innerHTML]="rejectLo3 | prism: 'typescript'"></code></pre>
+              </td>
+              <td>
+                <pre><code [innerHTML]="filterLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code [innerHTML]="reject3 | prism: 'typescript'"></code></pre>
+              </td>
+              <td>
+                <pre><code [innerHTML]="filter | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- sample -->
+      <ng-container *ngSwitchCase="'_.sample'">
+        <p>隨機取一個</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="sampleOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sampleLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sampleJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="sample | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="users3Str | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sampleLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sampleJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="sample2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- sampleSize -->
+      <ng-container *ngSwitchCase="'_.sampleSize'">
+        <p>隨機取指定數量</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="sampleSizeOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sampleSizeLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sampleSizeJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="sampleSize | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- shuffle -->
+      <ng-container *ngSwitchCase="'_.shuffle'">
+        <p>Fisher-Yates shuffle(費雪-耶茨 洗牌法)，把陣列打亂</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="shuffleOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="shuffleLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="shuffleJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="shuffle | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <img
+                  src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs11042-021-10847-7/MediaObjects/11042_2021_10847_Fig1_HTML.png">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- size -->
+      <ng-container *ngSwitchCase="'_.size'">
+        <p>集合的大小</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="sizeOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sizeLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sizeJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="size | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="users3Str | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sizeLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sizeJs2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="size2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="sizeOrg3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sizeLo3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sizeJs3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="size3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- some -->
+      <ng-container *ngSwitchCase="'_.some'">
+        <p>集合中是否有符合條件的元素</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="users3Str | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="someLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="someJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="some | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="someLo2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="some2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- sortBy -->
+      <ng-container *ngSwitchCase="'_.sortBy'">
+        <p>指定每個欄位排序，全部 asc</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Users</th>
+              <td>
+                <pre><code [innerHTML]="users2Str | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="sortByLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="sortByJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="sortBy | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
     </ng-container>
   </p-card>
 </div>
