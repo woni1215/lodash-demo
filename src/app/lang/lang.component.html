@@ -1,0 +1,529 @@
+<div class="m-5">
+  <p-card [header]="selectedMenu ? selectedMenu : undefined">
+    <ng-container [ngSwitch]="selectedMenu">
+
+      <!-- lt -->
+      <ng-container *ngSwitchCase="'_.lt'">
+        <p>_.lt(value, other)</p>
+        <p>value 是否小於 other</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="ltLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="ltJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="lt | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="lt2Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="lt2Js | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="lt2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>例外處理</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="lt3Lo | prism: 'typescript'"></code></pre>
+                <p>null、'' 轉換為 0</p>
+                <p>undefined 轉換為 NaN</p>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="lt3Js | prism: 'typescript'"></code></pre>
+                <p>❌會報錯</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- lte -->
+      <ng-container *ngSwitchCase="'_.lte'">
+        <p>_.lte(value, other)</p>
+        <p>value 是否小於等於 other</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="lteLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="lteJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="lte | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>例外處理</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="lte2Lo | prism: 'typescript'"></code></pre>
+                <p>null、'' 轉換為 0</p>
+                <p>undefined 轉換為 NaN</p>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="lte2Js | prism: 'typescript'"></code></pre>
+                <p>❌會報錯</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toArray -->
+      <ng-container *ngSwitchCase="'_.toArray'">
+        <p>轉換為陣列</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="toArrayOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toArrayLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toArrayJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toArray | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="toArray2Org | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toArray2Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toArray2Js | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toArray2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="toArray3Org | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toArray3Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toArray3Js | prism: 'typescript'"></code></pre>
+                <p>❌會報錯</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toArray3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="toArray4Org | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toArray4Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toArray4Js | prism: 'typescript'"></code></pre>
+                <p>❌會報錯</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toArray4 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toFinite -->
+      <ng-container *ngSwitchCase="'_.toFinite'">
+        <p>轉換為有限數字，無法轉換會 return 0</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toFiniteLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toFiniteJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toFinite | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>例外處理</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toFinite2Lo | prism: 'typescript'"></code></pre>
+                <p>Number.MIN_VALUE：大於 0 的最小正數</p>
+                <p>Number.MAX_VALUE：JavaScript 浮點數（64-bit IEEE 754）能表示的最大正數</p>
+                <p>比 Number.MAX_VALUE 大就會變成 Infinity</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toInteger -->
+      <ng-container *ngSwitchCase="'_.toInteger'">
+        <p>轉換為整數，超過會用 toFinite 限制，無法轉換會 return 0</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toIntegerLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toIntegerJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toInteger | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toInteger2Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toInteger2Js | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toInteger2 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toInteger3Lo | prism: 'typescript'"></code></pre>
+                <p>會先將 Infinity 轉換為 Number.MAX_VALUE</p>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="toInteger3Js | prism: 'typescript'"></code></pre>
+                <p>❌會回傳 null</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Result</th>
+              <td>
+                <pre><code [innerHTML]="toInteger3 | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toLength -->
+      <ng-container *ngSwitchCase="'_.toLength'">
+        <p>轉換為陣列長度，無法轉換會 return 0</p>
+        <p-divider>例外處理</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="toLengthLo | prism: 'typescript'"></code></pre>
+                <p>ECMAScript 標準規範 JavaScript 陣列長度的最大值為 2^32 - 1，是 Array.length 的最大值</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>使用情境</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>產生「指定數量」的陣列</th>
+              <td>
+                <pre><code [innerHTML]="toLength2 | prism: 'typescript'"></code></pre>
+                <input type="text" pInputText [(ngModel)]="toLength2Lo" />
+                <p>{{ toLength2Res }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toNumber -->
+      <ng-container *ngSwitchCase="'_.toNumber'">
+        <p>轉換為數字，無法轉換會 return NaN</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>基本功能</th>
+              <td>
+                <pre><code [innerHTML]="toNumberLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>例外處理</th>
+              <td>
+                <pre><code [innerHTML]="toNumber2Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>跟 _.toFinite 差異</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>_.toNumber</th>
+              <td>
+                <pre><code [innerHTML]="toNumber3Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>_.toFinite</th>
+              <td>
+                <pre><code [innerHTML]="toNumber4Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toPlainObject -->
+      <ng-container *ngSwitchCase="'_.toPlainObject'">
+        <p>轉換為純物件</p>
+        <p-divider></p-divider>
+        <p-divider>_.toPlainObject vs _.assign</p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Origin</th>
+              <td>
+                <pre><code [innerHTML]="toPlainObjectOrg | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>this.instance</th>
+              <td>
+                <pre><code [innerHTML]="toPlainObjectLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>_.assign</th>
+              <td>
+                <pre><code [innerHTML]="toPlainObject2Lo | prism: 'typescript'"></code></pre>
+                <p>將一或多個來源物件的自身屬性複製到目標物件中（不含原型）</p>
+              </td>
+            </tr>
+            <tr>
+              <th>_.toPlainObject</th>
+              <td>
+                <pre><code [innerHTML]="toPlainObject3Lo | prism: 'typescript'"></code></pre>
+                <p>把物件轉成包含「自身屬性 + 原型屬性」的純物件</p>
+              </td>
+            </tr>
+            <tr>
+              <th>_.toPlainObject + _.assign</th>
+              <td>
+                <pre><code [innerHTML]="toPlainObject4Lo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toSafeInteger -->
+      <ng-container *ngSwitchCase="'_.toSafeInteger'">
+        <p>轉成安全整數，±2^53-1 的整數，無法轉換會 return 0</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>基本功能</th>
+              <td>
+                <pre><code [innerHTML]="toSafeIntegerLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>例外處理</th>
+              <td>
+                <pre><code [innerHTML]="toSafeInteger2Lo | prism: 'typescript'"></code></pre>
+                <p>ECMAScript 標準規範，安全整數是指可以準確表示的整數，±2^53-1，也就是 -9007199254740991 到 9007199254740991</p>
+                <p>😮 為什麼超過這個範圍就不安全?</p>
+                <p>🥸 因為超過之後，精度會出現誤差</p>
+                <pre><code [innerHTML]="toSafeIntegerJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- toString -->
+      <ng-container *ngSwitchCase="'_.toString'">
+        <p>轉換為字串，無法轉換會 return 空字串 ''</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>基本功能</th>
+              <td>
+                <pre><code [innerHTML]="toStringLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>例外處理</th>
+              <td>
+                <pre><code [innerHTML]="toStringJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+    </ng-container>
+  </p-card>
+</div>

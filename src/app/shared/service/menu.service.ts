@@ -6,6 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MenuService {
 
-  selectedMenu$ = new BehaviorSubject<string | null>('Collection');
+  selectedMenu$ = new BehaviorSubject<string | null>('Lang');
 
 }

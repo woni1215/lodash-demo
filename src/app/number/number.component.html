@@ -1,0 +1,69 @@
+<div class="m-5">
+  <p-card [header]="selectedMenu ? selectedMenu : undefined">
+    <ng-container [ngSwitch]="selectedMenu">
+      <!-- clamp -->
+      <ng-container *ngSwitchCase="'_.clamp'">
+        <p>_.clamp(number, [lower], upper)</p>
+        <p>限制 number 在 [lower] 和 upper 之間</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="clampLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="clampJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- inRange -->
+      <ng-container *ngSwitchCase="'_.inRange'">
+        <p>_.inRange(number, [start=0], end)</p>
+        <p>檢查 number 是否在 [start] 和 end 之間，不包含 end</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="inRangeLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="inRangeJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- random -->
+      <ng-container *ngSwitchCase="'_.random'">
+        <p>_.random([lower=0], [upper=1], [floating])</p>
+        <p>返回一個隨機數字，範圍在 [lower] 和 upper 之間，包含 lower 和 upper</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>基本功能</th>
+              <td>
+                <pre><code [innerHTML]="randomLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+    </ng-container>
+  </p-card>
+</div>
