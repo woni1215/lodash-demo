@@ -1,0 +1,227 @@
+<div class="m-5">
+  <p-card [header]="selectedMenu ? selectedMenu : undefined">
+    <ng-container [ngSwitch]="selectedMenu">
+      <!-- padStart -->
+      <ng-container *ngSwitchCase="'_.padStart'">
+        <p>_.padStart(string, [length=0], [chars=' '])</p>
+        <p>把 string 左側填滿 chars 到指定長度</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="padStartLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="padStartJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- padEnd -->
+      <ng-container *ngSwitchCase="'_.padEnd'">
+        <p>_.padEnd(string, [length=0], [chars=' '])</p>
+        <p>把 string 右側填滿 chars 到指定長度</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="padEndLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="padEndJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- pad -->
+      <ng-container *ngSwitchCase="'_.pad'">
+        <p>_.pad(string, [length=0], [chars=' '])</p>
+        <p>把 string 兩側填滿 chars 到指定長度</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="padLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="padJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- parseInt -->
+      <ng-container *ngSwitchCase="'_.parseInt'">
+        <p>_.parseInt(string, [radix=10])</p>
+        <p>解析 string 為整數，進位制預設 10</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="parseIntLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="parseIntJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p-divider>差異</p-divider>
+        <p>在舊瀏覽器，若原生 parseInt 沒指定 radix，0x 開頭 ⇒ 16 進制、0 開頭 ⇒ 8 進制、其他 ⇒ 10 進制</p>
+        <p>會誤判 "08" ⇒ 0，Lodash 預設進位制為 10</p>
+        <br>
+        <pre><code [innerHTML]="'parseInt(true) vs _.parseInt(true)' | prism: 'typescript'"></code></pre>
+        <p>JS 處理順序：開頭不是數字 ⇒ 解析失敗 ⇒ 回傳 NaN</p>
+        <p>Lo 處理順序：把參數轉字串 ⇒ 解析失敗 ⇒ 回傳 NaN</p>
+      </ng-container>
+      <!-- repeat -->
+      <ng-container *ngSwitchCase="'_.repeat'">
+        <p>_.repeat(string, [n=1])</p>
+        <p>重複字串 n 次</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="repeatLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="repeatJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- replace -->
+      <ng-container *ngSwitchCase="'_.replace'">
+        <p>_.replace(string, pattern, replacement)</p>
+        <p>用 replacement 取代 string 中符合 pattern 的部分</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="replaceLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="replaceJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- snakeCase -->
+      <ng-container *ngSwitchCase="'_.snakeCase'">
+        <p>_.snakeCase(string)</p>
+        <p>將字串轉為 snake_case 格式</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="snakeCaseLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>case 比較</th>
+              <td>
+                <pre><code [innerHTML]="caseLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- split -->
+      <ng-container *ngSwitchCase="'_.split'">
+        <p>_.split(string, separator, [limit])</p>
+        <p>將字串依照 separator 分割成陣列</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="splitLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="splitJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- startCase -->
+      <ng-container *ngSwitchCase="'_.startCase'">
+        <p>_.startCase(string)</p>
+        <p>將字串轉為 Start Case 格式</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="startCaseLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- startsWith -->
+      <ng-container *ngSwitchCase="'_.startsWith'">
+        <p>_.startsWith(string, target, [position=0])</p>
+        <p>判斷字串是否從 target 開頭</p>
+        <p-divider></p-divider>
+        <table class="code-table">
+          <tbody>
+            <tr>
+              <th>Lodash</th>
+              <td>
+                <pre><code [innerHTML]="startsWithLo | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript</th>
+              <td>
+                <pre><code [innerHTML]="startsWithJs | prism: 'typescript'"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </p-card>
+</div>

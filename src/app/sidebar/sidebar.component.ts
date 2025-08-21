@@ -43,7 +43,7 @@ export class SidebarComponent {
     {
       label: 'Lang',
       data: '/lang',
-      expanded: true,
+      expanded: false,
       children: [
         { label: '_.lt', data: '/lang' },
         { label: '_.lte', data: '/lang' },
@@ -60,11 +60,28 @@ export class SidebarComponent {
     {
       label: 'Number',
       data: '/number',
-      expanded: true,
+      expanded: false,
       children: [
         { label: '_.clamp', data: '/number' },
         { label: '_.inRange', data: '/number' },
         { label: '_.random', data: '/number' }
+      ]
+    },
+    {
+      label: 'String',
+      data: '/string',
+      expanded: true,
+      children: [
+        { label: '_.padStart', data: '/string' },
+        { label: '_.padEnd', data: '/string' },
+        { label: '_.pad', data: '/string' },
+        { label: '_.parseInt', data: '/string' },
+        { label: '_.repeat', data: '/string' },
+        { label: '_.replace', data: '/string' },
+        { label: '_.snakeCase', data: '/string' },
+        { label: '_.split', data: '/string' },
+        { label: '_.startCase', data: '/string' },
+        { label: '_.startsWith', data: '/string' },
       ]
     }
   ];

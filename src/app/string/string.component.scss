@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 82px);
+  overflow-y: auto;
+
+  ::ng-deep {
+    // 卡片背景 & 字體顏色
+    .p-card {
+      background-color: var(--surface-800);
+      color: azure;
+    }
+
+    // 分隔線上背景 & 字體樣式
+    .p-divider .p-divider-content {
+      background-color: var(--surface-800);
+      color: var(--orange-400);
+      font-weight: bold;
+    }
+
+    // 分隔線顏色
+    .p-divider.p-divider-horizontal:before {
+      border-top: 3px solid var(--orange-400);
+    }
+  }
+}
+
+.code-table {
+  // 讓表格內的線條重疊
+  border-collapse: collapse;
+  width: 100%;
+
+  table,
+  tr {
+    border: 1px solid azure;
+  }
+
+  th {
+    border: 1px solid azure;
+    width: 20%;
+  }
+
+  td {
+    border: 1px solid azure;
+    padding: 8px;
+  }
+}
